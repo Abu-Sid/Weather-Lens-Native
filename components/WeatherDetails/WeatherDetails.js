@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../utils/index';
+import { FontAwesome5, MaterialComunityIcons} from '@expo/vector-icons';
 
 const { PRIMARY_COLOR, SECONDERY_COLOR, BORDER_COLOR } = colors;
 
@@ -9,8 +10,14 @@ const componentName = ({ currentWeather }) => {
   return (
     <View style={styles.weatherDetails}>
       <View style={styles.weatherDetailsRow}>
-        <View style={{...styles.weatherDetailsBox, borderRight}}>
-          <Text>{feels_like}</Text>
+        <View style={{...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR}}>
+          <View style={styles.weatherDetailsRow}>
+            <FontAwesome5 name='temperature-low' size={25} color={PRIMARY_COLOR}></FontAwesome5>
+            <View style={styles.weatherDetailsItems}>
+              <Text>Feels like: </Text>
+              <Text>{feels_like}</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.weatherDetailsBox}>
           <Text>{humidity}</Text>
@@ -38,5 +45,9 @@ const styles = StyleSheet.create({
   weatherDetailsBox: {
     flex: 1,
     padding: 20,
+  },
+  weatherDetailsItems: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
 })
