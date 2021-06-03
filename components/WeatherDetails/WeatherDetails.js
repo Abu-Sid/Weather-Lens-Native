@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../utils/index';
-import { FontAwesome5, MaterialComunityIcons} from '@expo/vector-icons';
+import { FontAwesome5, MaterialCommunityIcons} from '@expo/vector-icons';
 
 const { PRIMARY_COLOR, SECONDERY_COLOR, BORDER_COLOR } = colors;
 
@@ -40,7 +40,7 @@ const componentName = ({ currentWeather, unitsSystem }) => {
       <View style={{...styles.weatherDetailsRow, borderTopWidth: 1, borderTopColor: BORDER_COLOR}}>
         <View style={{...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR}}>
           <View style={styles.weatherDetailsRow}>
-            <MaterialComunityIcons name='weather-windy' size={30} color={PRIMARY_COLOR}></MaterialComunityIcons>
+            <MaterialCommunityIcons name='weather-windy' size={30} color={PRIMARY_COLOR}></MaterialCommunityIcons>
             <View style={styles.weatherDetailsItems}>
               <Text>Wind Speed: </Text>
               <Text style={styles.textSecondery}>{windSpeed}</Text>
@@ -49,7 +49,7 @@ const componentName = ({ currentWeather, unitsSystem }) => {
         </View>
         <View style={styles.weatherDetailsBox}>
           <View style={styles.weatherDetailsRow}>
-            <MaterialComunityIcons name='speedometer' size={30} color={PRIMARY_COLOR}></MaterialComunityIcons>
+            <MaterialCommunityIcons name='speedometer' size={30} color={PRIMARY_COLOR}></MaterialCommunityIcons>
             <View style={styles.weatherDetailsItems}>
               <Text>Pressure: </Text>
               <Text style={styles.textSecondery}>{pressure} hPa</Text>
