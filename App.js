@@ -1,7 +1,12 @@
-import * as Location from "expo-location";
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as Location from 'expo-location'
+import { StatusBar } from 'expo-status-bar'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import ReloadIcon from './components/ReloadIcon'
+import UnitsPicker from './components/UnitsPicker'
+import WeatherDetails from './components/WeatherDetails'
+import WeatherInfo from './components/WeatherInfo'
+
 export default function App() {
   const [location, setLocation] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -29,7 +34,7 @@ try {
 
     const result = await response.json()
 
-  alert (`Latitute is ${latitude} and Longitude is ${longitude}`)
+  alert (`Latitude is ${latitude} and Longitude is ${longitude}`)
   if (response.ok) {
     setCurrentWeather(result)
 } else {
@@ -41,12 +46,25 @@ try {
   }
   if (currentWeather) {
     return (
-        <View style={styles.container}>
-            <StatusBar style="auto" />
-            <Text>{errorMessage}</Text>
-        </View>
-    )
-} 
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+          <View style={styles.main}>
+              <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+              <ReloadIcon load={load} />
+              <WeatherInfo currentWeather={currentWeather} />
+          </View>
+          <WeatherDetails currentWeather={currentWeather} unitsSystem={unitsSystem} />
+      </View>
+        )
+} else if(errorMessage){
+            <View style={styles.container}>
+                <ReloadIcon load={load} />
+                <Text style={{ textAlign: 'center' }}>{errorMessage}</Text>
+                <StatusBar style="auto" />
+            </View>
+}else {
+
+}
 }
 
 const styles = StyleSheet.create({
