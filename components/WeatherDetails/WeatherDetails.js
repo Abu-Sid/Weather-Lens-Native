@@ -5,26 +5,54 @@ import { FontAwesome5, MaterialComunityIcons} from '@expo/vector-icons';
 
 const { PRIMARY_COLOR, SECONDERY_COLOR, BORDER_COLOR } = colors;
 
-const componentName = ({ currentWeather }) => {
-  const {main: {feels_like, humidity}} = currentWeather;
+const componentName = ({ currentWeather, unitsSystem }) => {
+  const {
+    main: { feels_like, humidity, pressure },
+    wind: { speed }
+  } = currentWeather;
+
+  const windSpeed = unitsSystem === 'metric' ? `${Math.round(speed)} m/s` : `${Math.round(speed)} miles/h`;
   return (
     <View style={styles.weatherDetails}>
+      {/* First Line */}
       <View style={styles.weatherDetailsRow}>
         <View style={{...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR}}>
           <View style={styles.weatherDetailsRow}>
             <FontAwesome5 name='temperature-low' size={25} color={PRIMARY_COLOR}></FontAwesome5>
             <View style={styles.weatherDetailsItems}>
               <Text>Feels like: </Text>
-              <Text style={styles.textSecondery}>{feels_like}</Text>
+              <Text style={styles.textSecondery}>{feels_like}°</Text>
             </View>
           </View>
         </View>
         <View style={styles.weatherDetailsBox}>
           <View style={styles.weatherDetailsRow}>
-            <FontAwesome5 name='temperature-low' size={25} color={PRIMARY_COLOR}></FontAwesome5>
+            <FontAwesome5 name='water' size={30} color={PRIMARY_COLOR}></FontAwesome5>
             <View style={styles.weatherDetailsItems}>
               <Text>Humidity: </Text>
-              <Text style={styles.textSecondery}>{humidity}</Text>
+              <Text style={styles.textSecondery}>{humidity}%</Text>
+            </View>
+          </View>
+        </View>
+      </View>
+
+      {/* Second Line */}
+      <View style={styles.weatherDetailsRow}>
+        <View style={{...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR}}>
+          <View style={styles.weatherDetailsRow}>
+            <MaterialComunityIcons name='weather-windy' size={30} color={PRIMARY_COLOR}></MaterialComunityIcons>
+            <View style={styles.weatherDetailsItems}>
+              <Text>Wind Speed: </Text>
+              <Text style={styles.textSecondery}>{windSpeed}</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.weatherDetailsBox}>
+          <View style={styles.weatherDetailsRow}>
+            <MaterialComunityIcons name='speedometer' size={30} color={PRIMARY_COLOR}></MaterialComunityIcons>
+            <View style={styles.weatherDetailsItems}>
+              <Text>Pressure: </Text>
+              <Text style={styles.textSecondery}>{pressure} hPa</Text>
             </View>
           </View>
         </View>
