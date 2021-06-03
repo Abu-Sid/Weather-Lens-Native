@@ -15,12 +15,18 @@ const componentName = ({ currentWeather }) => {
             <FontAwesome5 name='temperature-low' size={25} color={PRIMARY_COLOR}></FontAwesome5>
             <View style={styles.weatherDetailsItems}>
               <Text>Feels like: </Text>
-              <Text>{feels_like}</Text>
+              <Text style={styles.textSecondery}>{feels_like}</Text>
             </View>
           </View>
         </View>
         <View style={styles.weatherDetailsBox}>
-          <Text>{humidity}</Text>
+          <View style={styles.weatherDetailsRow}>
+            <FontAwesome5 name='temperature-low' size={25} color={PRIMARY_COLOR}></FontAwesome5>
+            <View style={styles.weatherDetailsItems}>
+              <Text>Humidity: </Text>
+              <Text style={styles.textSecondery}>{humidity}</Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -49,5 +55,11 @@ const styles = StyleSheet.create({
   weatherDetailsItems: {
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
+  },
+  textSecondery: {
+    fontSize: 15,
+    color: SECONDERY_COLOR,
+    fontWeight: '700',
+    margin: 7,
   },
 })
