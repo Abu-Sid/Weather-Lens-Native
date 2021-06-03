@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { colors } from '../utils/index';
+import { colors } from '../../utils/index';
 import { FontAwesome5, MaterialComunityIcons} from '@expo/vector-icons';
 
 const { PRIMARY_COLOR, SECONDERY_COLOR, BORDER_COLOR } = colors;
