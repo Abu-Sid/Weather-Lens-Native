@@ -8,14 +8,16 @@ import WeatherDetails from './components/WeatherDetails/WeatherDetails'
 import WeatherInfo from './components/WeatherInfo/WeatherInfo'
 import { colors } from './utils/index'
 
+const API_KEY = 'b381267e48a3a93fbd3768730eb8ae1d'
+const URL = 'https://api.openweathermap.org/data/2.5/weather?'
+
 export default function App() {
 
   const [location, setLocation] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
   const [unitsSystem, setUnitsSystem] = useState('metric')
-  const API_KEY = 'b381267e48a3a93fbd3768730eb8ae1d'
-  const URL = 'https://api.openweathermap.org/data/2.5/weather?'
+ 
 
   useEffect(() => {
     load()
@@ -39,7 +41,7 @@ export default function App() {
 
       const result = await response.json()
 
-      alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
+      // alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
       if (response.ok) {
         setCurrentWeather(result)
       } else {
@@ -49,6 +51,7 @@ export default function App() {
       setErrorMessage(error.message)
     }
   }
+  // return code part
   if (currentWeather) {
     return (
       <View style={styles.container}>
@@ -82,8 +85,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    // backgroundColor: '#fff',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
   main: {
