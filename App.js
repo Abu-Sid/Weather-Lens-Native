@@ -23,7 +23,7 @@ try {
   const location = await Location.getCurrentPositionAsync()
   setLocation(location)
   const {latitude,longitude}=location.coords
-  const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${WEATHER_API_KEY}`
+  const weatherUrl = `${URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${API_KEY}`
 
     const response = await fetch(weatherUrl)
 
@@ -39,12 +39,14 @@ try {
   setErrorMessage(error.message)
 }
   }
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  if (currentWeather) {
+    return (
+        <View style={styles.container}>
+            <StatusBar style="auto" />
+            <Text>{errorMessage}</Text>
+        </View>
+    )
+} 
 }
 
 const styles = StyleSheet.create({
@@ -54,4 +56,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  main: {
+    justifyContent: 'center',
+    flex: 1,
+},  
 });
