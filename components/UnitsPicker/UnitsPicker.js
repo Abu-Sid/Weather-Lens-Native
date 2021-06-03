@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         }),
         height: 50,
         width: 100,
-        top: -30,
         left: 20
     }
 })
