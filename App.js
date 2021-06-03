@@ -3,7 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
+  const [location, setLocation] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null)
+  const [currentWeather, setCurrentWeather] = useState(null)
+  const [unitsSystem, setUnitsSystem] = useState('metric')
+  const API_KEY = 'b381267e48a3a93fbd3768730eb8ae1d'
+  const URL = 'https://api.openweathermap.org/data/2.5/weather?'
   useEffect(() => {
     load()
     
@@ -16,10 +21,22 @@ try {
     return
   }
   const location = await Location.getCurrentPositionAsync()
+  setLocation(location)
   const {latitude,longitude}=location.coords
+  const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${WEATHER_API_KEY}`
+
+    const response = await fetch(weatherUrl)
+
+    const result = await response.json()
+
   alert (`Latitute is ${latitude} and Longitude is ${longitude}`)
+  if (response.ok) {
+    setCurrentWeather(result)
+} else {
+    setErrorMessage(result.message)
+}
 } catch (error) {
-  
+  setErrorMessage(error.message)
 }
   }
   return (
