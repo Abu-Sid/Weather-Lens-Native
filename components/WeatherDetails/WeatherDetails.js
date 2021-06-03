@@ -37,7 +37,7 @@ const componentName = ({ currentWeather, unitsSystem }) => {
       </View>
 
       {/* Second Line */}
-      <View style={styles.weatherDetailsRow}>
+      <View style={{...styles.weatherDetailsRow, borderTopWidth: 1, borderTopColor: BORDER_COLOR}}>
         <View style={{...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR}}>
           <View style={styles.weatherDetailsRow}>
             <MaterialComunityIcons name='weather-windy' size={30} color={PRIMARY_COLOR}></MaterialComunityIcons>
