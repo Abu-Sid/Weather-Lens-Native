@@ -18,6 +18,7 @@ export default function UnitsPicker({unitsSystem, setUnitsSystem}) {
     )
 }
 
+// Styles
 const styles = StyleSheet.create({
     unitsSystem : {
         position: 'absolute',

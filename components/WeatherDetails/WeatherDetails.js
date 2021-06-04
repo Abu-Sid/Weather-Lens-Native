@@ -63,6 +63,7 @@ const WeatherDetails = ({ currentWeather, unitsSystem }) => {
 
 export default WeatherDetails;
 
+// Styles
 const styles = StyleSheet.create({
   weatherDetails: {
     marginTop: 'auto',

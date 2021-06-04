@@ -25,6 +25,7 @@ const iconUrl = `https://openweathermap.org/img/wn/${icon}@4x.png`
     )
 }
 
+// Styles
 const styles = StyleSheet.create({
     weatherInfo: {
         alignItems: 'center',
