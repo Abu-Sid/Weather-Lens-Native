@@ -41,7 +41,7 @@ export default function App() {
 
       const result = await response.json()
 
-      // alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
+      alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
       if (response.ok) {
         setCurrentWeather(result)
       } else {
@@ -76,6 +76,9 @@ export default function App() {
     return (
       <View style={styles.container}>
         <ActivityIndicator size="large" color={colors.PRIMARY_COLOR} />
+        <View style={{textAlign: 'center', alignItems: 'center'}}>
+          <Text style={styles.titleText}>Weather Lens</Text>
+        </View>
         <StatusBar style="auto" />
       </View>
     )
@@ -85,12 +88,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
     justifyContent: 'center',
   },
   main: {
     justifyContent: 'center',
     flex: 1,
+  },
+  titleText: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: colors.PRIMARY_COLOR,
+    paddingTop: 10,
   },
 });
