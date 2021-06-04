@@ -1,7 +1,7 @@
-import * as Location from 'expo-location'
 import { StatusBar } from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import * as Location from 'expo-location'
 import ReloadIcon from './components/ReloadIcon/ReloadIcon'
 import UnitsPicker from './components/UnitsPicker/UnitsPicker'
 import WeatherDetails from './components/WeatherDetails/WeatherDetails'
@@ -41,7 +41,7 @@ export default function App() {
 
       const result = await response.json()
 
-      alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
+      // alert(`Latitude is ${latitude} and Longitude is ${longitude}`)
       if (response.ok) {
         setCurrentWeather(result)
       } else {
@@ -75,10 +75,10 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color={colors.PRIMARY_COLOR} />
         <View style={{textAlign: 'center', alignItems: 'center'}}>
           <Text style={styles.titleText}>Weather Lens</Text>
         </View>
+        <ActivityIndicator size="large" color={colors.PRIMARY_COLOR} />
         <StatusBar style="auto" />
       </View>
     )
@@ -98,6 +98,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: colors.PRIMARY_COLOR,
-    paddingTop: 10,
+    paddingBottom: 20,
   },
 });
