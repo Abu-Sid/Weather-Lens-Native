@@ -8,6 +8,7 @@ import WeatherDetails from './components/WeatherDetails/WeatherDetails'
 import WeatherInfo from './components/WeatherInfo/WeatherInfo'
 import { colors } from './utils/index'
 
+// API Key
 const API_KEY = 'b381267e48a3a93fbd3768730eb8ae1d'
 const URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
