@@ -8,12 +8,12 @@ https://drive.google.com/file/d/1BNrtR1AtMXXtlu5lyyRGt_0jW7D2smYE/view
 ### Main APK Download Link
 https://drive.google.com/uc?id=15gowpMQMxsLJNM9XVc7dgKJxIJUKZB-M
 
-# Contributors
+## Contributors
 1. ASIF ESTIAK (DEVELOPER & PROJECT MANGER)
 2. ABU SIDDIQUE (DEVELOPER)
 3. FAYSAL KHAN (DEVELOPER)
 
-# PROJECT FEATURES
+## PROJECT FEATURES
 1. Get real time weather forecast update.
 2. A cross platform mobile app build with React Native.
 3. Real time unit conversion between celsius to fahrenheit.
@@ -21,7 +21,7 @@ https://drive.google.com/uc?id=15gowpMQMxsLJNM9XVc7dgKJxIJUKZB-M
 5. Agile methodology utilized by JIRA for planning and management.
 6. Build with clean & minimalistic design and layout.
 
-# TECHNOLOGIES
+## TECHNOLOGIES
 1. React Native
 2. EXPO
 3. EXPO Location
