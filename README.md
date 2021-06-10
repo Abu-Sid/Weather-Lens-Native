@@ -1,26 +1,4 @@
-# Weather Lens
-
-### GitHub Repo Link
-
-https://github.com/Abu-Sid/Weather-Lens-Native
-
-### Video Presentation Link
-
-https://drive.google.com/file/d/1kmpU43Bhn4Si6Ce3xg4J5VvLNjzr-Jdh/view?usp=sharing
-
-### Power Point Presentation Link
-
-https://drive.google.com/file/d/1BNrtR1AtMXXtlu5lyyRGt_0jW7D2smYE/view
-
-### Main APK Download Link
-
-https://drive.google.com/uc?id=15gowpMQMxsLJNM9XVc7dgKJxIJUKZB-M
-
-## Contributors
-
-1. ABU SIDDIQUE (DEVELOPER)
-2. ASIF ESTIAK (DEVELOPER & PROJECT MANGER)
-3. FAYSAL KHAN (DEVELOPER)
+# Weather Lens - A react native app for updated weather forecast based on your current location
 
 ## PROJECT FEATURES
 
@@ -44,3 +22,21 @@ https://drive.google.com/uc?id=15gowpMQMxsLJNM9XVc7dgKJxIJUKZB-M
 9. Android Emulator
 10. Font Awesome 5 Vector Icon
 11. Material Icon Vector Icon
+
+### Video Presentation Link
+
+https://drive.google.com/file/d/1kmpU43Bhn4Si6Ce3xg4J5VvLNjzr-Jdh/view?usp=sharing
+
+### Power Point Presentation Link
+
+https://drive.google.com/file/d/1BNrtR1AtMXXtlu5lyyRGt_0jW7D2smYE/view
+
+### Main APK Download Link
+
+https://drive.google.com/uc?id=15gowpMQMxsLJNM9XVc7dgKJxIJUKZB-M
+
+## Contributors
+
+1. ABU SIDDIQUE (DEVELOPER)
+2. ASIF ESTIAK (DEVELOPER & PROJECT MANGER)
+3. FAYSAL KHAN (DEVELOPER)
